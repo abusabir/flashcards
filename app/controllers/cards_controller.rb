@@ -6,9 +6,11 @@ class CardsController < ApplicationController
     def create
         @card = Card.new(card_params)
         @card.review_date = DateTime.now.next_day(3)
-        @card.save
-
-        redirect_to @card
+        if @card.save
+            redirect_to @card
+        else
+            render 'new'
+        end
     end
 
     def update
