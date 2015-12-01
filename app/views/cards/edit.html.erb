@@ -1,0 +1,19 @@
+<div class="col-xs-6">
+    <h1>Edit card <%= @card.id %></h1>
+
+<%= form_for :card, url: card_path(@card), method: :patch do |f| %>
+  <div class="form-group">
+    <%= f.label(:original_text, "Original text") %>
+    <%= f.text_field :original_text, class: "form-control" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label(:translated_text, "Translated text") %>
+    <%= f.text_field :translated_text, class:  "form-control" %>
+  </div>
+
+  <%= f.submit %>
+
+  
+<% end %>
+</div>

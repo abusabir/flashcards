@@ -15,7 +15,10 @@
         <td><%= card.original_text %></td>
         <td><%= card.translated_text %></td>
         <td><%= l card.review_date, format: :short  %></td>
-        <td><%= link_to 'Просмотреть', card_path(card.id) %>/ <%= link_to 'Редактировать' , edit_card_path(card.id) %>/<%= link_to 'Удалить' %></td>
+        <td><%= link_to 'Просмотреть', card_path(card.id) %>/ <%= link_to 'Редактировать' , edit_card_path(card.id) %>/
+          <%= link_to 'Удалить' , card_path(card),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
