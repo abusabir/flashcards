@@ -1,0 +1,19 @@
+<h1>Card # <%= @card.id %></h1>
+<div class="col-xs-4">
+<table class="table table-striped">
+  <tr>
+    <th>Original text</th>
+    <td><%= @card.original_text %>
+  </tr>
+  <tr>
+    <th>Translated text</th>
+    <td><%= @card.translated_text %>
+
+  </tr>
+  <tr>
+    <th>Review date</th>
+    <td><%= l @card.review_date, format: :short%></td>
+  </tr>
+</table>
+<%= link_to 'Назад к списку карточек', cards_path %>
+</div>
