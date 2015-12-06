@@ -46,6 +46,7 @@ group :development do
   gem 'spring'
 
   gem 'simple_form'
+  gem 'nokogiri'
 
 end
 
