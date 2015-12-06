@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_filter :find_card,
+  before_action :find_card,
       :only => [:show, :update, :edit, :destroy]
 
   def index
@@ -12,7 +12,7 @@ class CardsController < ApplicationController
     if @card.save
       redirect_to @card
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -20,7 +20,7 @@ class CardsController < ApplicationController
     if @card.update(card_params)
       redirect_to @card
     else
-      render 'edit'
+      render "edit"
     end
   end
 
