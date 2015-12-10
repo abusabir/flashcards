@@ -2,7 +2,7 @@ class Card < ActiveRecord::Base
   validates :original_text, :translated_text, :review_date, presence: true
   validate :check_cards
 
-  before_validation do
+  before_create do
     self.review_date = DateTime.now.next_day(3)
   end
 
