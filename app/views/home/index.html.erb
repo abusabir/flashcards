@@ -1,3 +1,10 @@
-    <p class="lead">
-      Первый в мире удобный менеджер флеш-карточек. Именно так.
-    </p>
+<p class="lead">
+  Проверь себя
+</p>
+<h3>Слово: <%= @card.original_text %></h3>
+<%= form_tag("/", method: "post") do %>
+  <%= label_tag(:answer, "Перевод:") %>
+  <%= text_field_tag(:answer) %>
+  <%= submit_tag("Ответить") %>
+<% end %>
+
